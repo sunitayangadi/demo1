@@ -1,12 +1,9 @@
 pipeline {
 	agent any
-	tools {
-        maven 'm1' 
-    }
 	stages {
 		stage('Build') {
 			steps {
-				sh 'mvn -B -DskipTests clean install'
+				sh 'mvn clean install'
 			}
 		}
 		stage('Testing') {
